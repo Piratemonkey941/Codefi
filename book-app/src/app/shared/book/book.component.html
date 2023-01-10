@@ -5,11 +5,15 @@
   routerLinkActive="active"
 >
   <div class="float-left">
+
     <h4 class="list-group-item-heading">{{ book.title }}</h4>
 
-    <p class="list-group-item-text mb-0" *ngIf="book.genre !== ''">
+    <p
+        class="list-group-item-text mb-0"
+        *ngIf="book.genre !== ''">
       {{ book.genre }}
     </p>
+
     <p class="list-group-item-text mb-0">{{ book.author }}</p>
     <p
       class="list-group-item-text mb-0"
@@ -17,7 +21,8 @@
     >
       {{ book.price | currency }}
     </p>
-    <p class="list-group-item-text mb-0" *ngIf="book.firstPublishYear">
+    <p class="list-group-item-text mb-0"
+      *ngIf="book.firstPublishYear">
       {{ book.firstPublishYear }}
     </p>
   </div>

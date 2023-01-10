@@ -80,7 +80,8 @@ export class AuthService {
         })
       );
   }
-
+  
+//signIn
   login(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(this.loginUrl, {

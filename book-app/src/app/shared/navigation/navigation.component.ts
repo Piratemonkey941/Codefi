@@ -39,3 +39,4 @@ export class NavigationComponent implements OnInit, OnDestroy {
     this.authService.signout();
   }
 }
+

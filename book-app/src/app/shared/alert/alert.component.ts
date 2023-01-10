@@ -6,6 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./alert.component.css'],
 })
 export class AlertComponent implements OnInit {
+  
   @Input() alertMsg!: string;
   @Output() closeModal = new EventEmitter<void>();
 

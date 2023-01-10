@@ -1,4 +1,7 @@
-<form #searchForm="ngForm" (ngSubmit)="onFetchBooks(searchForm.value.search)" class="form-inline mb-3">
+<form
+#searchForm="ngForm"
+(ngSubmit)="onFetchBooks(searchForm.value.search)"
+class="form-inline mb-3">
   <div class="form-group mr-2">
     <label for="search" class="sr-only">Search</label>
     <input
@@ -12,5 +15,10 @@
     >
   </div>
 
-  <button class="btn btn-primary" type="submit" [disabled]="!searchForm.valid">Search</button>
+  <button
+      class="btn btn-primary"
+      type="submit"
+      [disabled]="!searchForm.valid"
+    >Search
+  </button>
 </form>

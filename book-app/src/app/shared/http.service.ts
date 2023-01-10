@@ -28,33 +28,33 @@ export class HttpService {
   }
 
   fetchBooksFromFirebase() {
-    // return this.http
-    //   .get(this.firebaseRootURL, {})
-    //   .subscribe((res) => {
-    //     this.bookshelf.setBooks(res as Book[])
-    //   })
-
-    // return this.authService.currentUser.pipe(
-    //   take(1),
-    //   exhaustMap((user) => {
-    //     console.log(user);
-    //     return this.http
-    //       .get(this.firebaseRootURL, {
-    //         // default initialization using '??'
-    //         params: new HttpParams().set('auth', user?.token ?? "")
-    //       })
-    //       .pipe(
-    //         tap((books: any) => {
-    //           this.bookshelf.setBooks(books as Book[])
-    //         })
-    //       )
-    //   })
-    // )
-
-    return this.http.get<Book[]>(this.firebaseRootURL, {}).pipe(
-      tap((books) => {
-        this.bookshelf.setBooks(books);
+    return this.http
+      .get(this.firebaseRootURL, {})
+      .subscribe((res) => {
+        this.bookshelf.setBooks(res as Book[])
       })
-    );
-  }
+
+    return this.authService.currentUser.pipe(
+      take(1),
+      exhaustMap((user) => {
+        console.log(user);
+        return this.http
+          .get(this.firebaseRootURL, {
+            // default initialization using '??'
+            params: new HttpParams().set('auth', user?.token ?? "")
+          })
+          .pipe(
+            tap((books: any) => {
+              this.bookshelf.setBooks(books as Book[])
+            })
+          )
+      })
+    )
+
+  //   return this.http.get<Book[]>(this.firebaseRootURL, {}).pipe(
+  //     tap((books) => {
+  //       this.bookshelf.setBooks(books);
+  //     })
+  //   );
+  // }
 }
